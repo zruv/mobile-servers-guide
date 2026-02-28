@@ -36,15 +36,18 @@ This guide explains how to enable Shizuku on Android 11 and above without root a
 ## Step 5: Termux Integration (Optional)
 To use Shizuku inside Termux:
 1. In Shizuku, tap **Authorized applications** and enable **Termux**.
-2. In Termux, run:
+2. In Shizuku's main screen, tap **"Use Shizuku in terminal (e.g., Termux)"** and tap **"Export files"**. Save them to your internal storage (e.g., the Downloads folder).
+3. In Termux, run:
    ```bash
    termux-setup-storage
+   # (Grant permission if prompted)
+   
    mkdir -p ~/.shizuku
-   cp /sdcard/Android/data/moe.shizuku.privileged.api/files/rish* ~/.shizuku/
+   cp ~/storage/downloads/rish* ~/.shizuku/
    chmod +x ~/.shizuku/rish
    cp ~/.shizuku/rish* $PREFIX/bin/
    ```
-3. Type `rish` to enter the ADB shell.
+4. Type `rish` to enter the ADB shell.
 
 ---
 **Note:** If you reboot your phone, you must repeat **Step 4** to start the service again.
